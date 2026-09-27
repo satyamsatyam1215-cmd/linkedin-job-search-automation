@@ -1,42 +1,50 @@
 # LinkedIn Job Search Automation & Job Market Analysis
 
-A Python-based data analytics project that automates LinkedIn job data collection, cleans and transforms the collected data, and performs visual analysis of the Junior Data Analyst job market.
+A Python-based data analytics project that automates job data collection, cleans and transforms the collected data, and analyzes the Junior Data Analyst job market through Python-based visualization.
 
-The project was developed as an end-to-end workflow covering **data collection, data cleaning, transformation, exploratory analysis, visualization, and reporting**.
+## Overview
 
----
+This project was developed as an end-to-end data workflow covering:
 
-## Project Overview
+* Job data collection
+* Data extraction
+* Data cleaning
+* Data transformation
+* Exploratory data analysis
+* Data visualization
+* Job market reporting
 
-This project was built to streamline repetitive job-search data collection and convert job listings into a structured dataset that can be analyzed.
+The project uses configurable search parameters such as job title, location, posting period, and number of jobs.
 
-The workflow starts with configurable search criteria such as job title, location, posting period, and number of jobs. The collected records are then cleaned and transformed before being used for job-market analysis and visualization.
-
-## Workflow
+## Project Workflow
 
 ```text
 Search Criteria
-      ↓
-LinkedIn Job Listings
-      ↓
+       |
+       v
 Job Data Collection
-      ↓
+       |
+       v
 Job Detail Extraction
-      ↓
+       |
+       v
 Data Cleaning
-      ↓
+       |
+       v
 Data Transformation
-      ↓
+       |
+       v
 Exploratory Data Analysis
-      ↓
+       |
+       v
 Data Visualization
-      ↓
+       |
+       v
 Job Market Analysis
-      ↓
+       |
+       v
 Final Report
 ```
-
----
 
 ## Key Features
 
@@ -47,80 +55,75 @@ Final Report
 * Filter recently posted jobs
 * Configure the number of jobs to collect
 * Extract job descriptions when available
-* Capture company and location information
+* Collect company information
+* Collect job location
 * Capture posting information
 * Capture applicant information when available
 * Remove duplicate job listings
 
-### Data Cleaning & Transformation
+### Data Cleaning and Transformation
 
-* Standardize text fields
-* Clean and prepare collected records
-* Handle missing posting dates
-* Convert posting timestamps to IST
+* Clean text fields
+* Handle missing values
+* Remove duplicate records
+* Process posting dates and times
+* Convert timestamps to IST
 * Calculate days since posting
-* Sort records by posting date
-* Prepare structured datasets for analysis
+* Prepare structured data for analysis
 
 ### Job Market Analysis
 
 * Analyze Junior Data Analyst job listings
-* Explore job-posting patterns
-* Create visualizations using Python
+* Explore job posting patterns
+* Create charts and visualizations
 * Generate a PDF-based analysis report
-
----
 
 ## Technology Stack
 
-| Technology            | Purpose                              |
-| --------------------- | ------------------------------------ |
-| **Python**            | Core programming and data processing |
-| **Selenium**          | Browser automation                   |
-| **BeautifulSoup**     | HTML parsing and data extraction     |
-| **Pandas**            | Data cleaning and transformation     |
-| **NumPy**             | Numerical and data processing        |
-| **Matplotlib**        | Data visualization                   |
-| **Seaborn**           | Statistical visualization            |
-| **LXML**              | HTML parsing                         |
-| **WebDriver Manager** | Browser driver management            |
-| **Jupyter Notebook**  | Development and analysis             |
+| Technology        | Purpose                                  |
+| ----------------- | ---------------------------------------- |
+| Python            | Data collection, processing and analysis |
+| Selenium          | Browser automation                       |
+| BeautifulSoup     | HTML parsing and data extraction         |
+| Pandas            | Data cleaning and transformation         |
+| NumPy             | Data processing                          |
+| Matplotlib        | Data visualization                       |
+| Seaborn           | Statistical visualization                |
+| LXML              | HTML parsing                             |
+| WebDriver Manager | Browser driver management                |
+| Jupyter Notebook  | Development and analysis                 |
 
----
-
-## Repository Structure
+## Project Structure
 
 ```text
 linkedin-job-search-automation/
-│
-├── NoteBook/
-│   ├── linkedin_job_scraper.ipynb
-│   ├── linkedin_data_cleaning.ipynb
-│   └── Data visulation .ipynb
-│
-├── Sample data Clean-Raw/
-│   ├── linkedin_jobs_cleaned.csv
-│   └── linkedin_junior_data_analyst_jobs.csv
-│
-├── Result/
-│   └── Junior_Data_Analyst_Job_Market_Analysis_charts.pdf
-│
-└── README.md
+|
++-- NoteBook/
+|   +-- linkedin_job_scraper.ipynb
+|   +-- linkedin_data_cleaning.ipynb
+|   +-- Data visulation .ipynb
+|
++-- Sample data Clean-Raw/
+|   +-- linkedin_jobs_cleaned.csv
+|   +-- linkedin_junior_data_analyst_jobs.csv
+|
++-- Result/
+|   +-- Junior_Data_Analyst_Job_Market_Analysis_charts.pdf
+|
++-- README.md
 ```
-
----
 
 ## Notebooks
 
-### 1. Job Scraper
+### 1. LinkedIn Job Scraper
 
-**`linkedin_job_scraper.ipynb`**
+File:
+
+`NoteBook/linkedin_job_scraper.ipynb`
 
 This notebook handles the job-search and data-collection process.
 
-Search parameters can be customized according to the required analysis.
-
-Example:
+Example configuration:
 
 ```python
 job_title = "junior data analyst"
@@ -133,30 +136,34 @@ get_job_description = True
 
 ### 2. Data Cleaning
 
-**`linkedin_data_cleaning.ipynb`**
+File:
 
-This notebook processes the collected job data and prepares it for analysis.
+`NoteBook/linkedin_data_cleaning.ipynb`
 
-The workflow includes:
+This notebook prepares the collected job data for analysis.
+
+The cleaning workflow includes:
 
 * Text cleaning
 * Data standardization
-* Duplicate handling
+* Duplicate removal
 * Date and time processing
 * Missing-value handling
 * Dataset preparation
 
 ### 3. Data Visualization
 
-**`Data visulation .ipynb`**
+File:
 
-This notebook uses the prepared dataset to create visualizations and explore patterns within the Junior Data Analyst job market.
+`NoteBook/Data visulation .ipynb`
 
----
+This notebook uses the cleaned dataset to create visualizations and analyze the Junior Data Analyst job market.
 
 ## Dataset
 
-The processed dataset contains information such as:
+The project contains raw and cleaned job datasets.
+
+Important fields include:
 
 | Column              | Description                          |
 | ------------------- | ------------------------------------ |
@@ -166,67 +173,59 @@ The processed dataset contains information such as:
 | `posted_date_ist`   | Posting date in IST                  |
 | `posted_time_ist`   | Posting time in IST                  |
 | `days_since_posted` | Number of days since posting         |
-| `posted_text`       | Original posting-time text           |
+| `posted_text`       | Original posting information         |
 | `applicants`        | Applicant information when available |
 | `jd`                | Job description                      |
 | `link`              | Job listing URL                      |
 
----
+## Analysis Report
 
-## Results
+The repository includes a PDF report containing visual analysis of the Junior Data Analyst job dataset.
 
-The repository includes a PDF report containing the visual analysis of the Junior Data Analyst job dataset.
+Report:
 
-### Analysis Report
+`Result/Junior_Data_Analyst_Job_Market_Analysis_charts.pdf`
 
-[View Junior Data Analyst Job Market Analysis](Result/Junior_Data_Analyst_Job_Market_Analysis_charts.pdf)
-
----
+You can open the PDF directly from the `Result` folder in the repository.
 
 ## Skills Demonstrated
 
 This project demonstrates practical experience with:
 
 * Python
-* Web automation
-* Web data extraction
+* Selenium
+* BeautifulSoup
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Data extraction
 * Data cleaning
 * Data transformation
 * Exploratory Data Analysis
 * Data visualization
-* Pandas
-* Selenium
-* BeautifulSoup
-* Matplotlib
-* Seaborn
 * Jupyter Notebook
 * Analytical reporting
 
----
-
 ## Future Improvements
 
-* Automated skill extraction from job descriptions
-* Experience-level classification
-* Job-role categorization
-* Skill-demand analysis
-* Salary analysis where publicly available
-* Power BI dashboard integration
-* Automated job reporting
-* Job matching based on required skills
-
----
+* Extract skills from job descriptions
+* Classify experience requirements
+* Categorize job roles
+* Analyze skill demand
+* Analyze salary information where publicly available
+* Build an interactive Power BI dashboard
+* Automate reporting
+* Develop job matching based on required skills
 
 ## Disclaimer
 
 This project is intended for educational and research purposes. Users should comply with LinkedIn's applicable Terms of Service, access restrictions, and usage policies when using automation tools.
 
----
-
 ## Author
 
 **Satyam Singh**
 
-**Data Analyst | Python | SQL | Power BI | Excel**
+Data Analyst | Python | SQL | Power BI | Excel
 
-GitHub: [satyamsatyam1215-cmd](https://github.com/satyamsatyam1215-cmd)
+GitHub: https://github.com/satyamsatyam1215-cmd
